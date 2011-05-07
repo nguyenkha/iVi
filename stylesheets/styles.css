@@ -1,0 +1,15 @@
+#wallet {
+	position: absolute;
+	bottom: 3em;
+	left: 5.5em;
+}
+
+#coin {
+	position: absolute;
+	top: 2.5em;
+	left: 6.7em;
+}
+
+.hidden {
+	visibility: hidden;
+}
