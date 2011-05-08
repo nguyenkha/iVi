@@ -10,6 +10,197 @@
 	left: 6.7em;
 }
 
+#coin1{
+	position: absolute;
+	bottom: 3em;
+	left: 5.5em;
+}
+
+.moneybase{
+	width:100px;
+	height: 50px;	
+	-moz-box-shadow: .2em .1em #999;
+	-webkit-box-shadow: 0em .1em #999;
+}
+
 .hidden {
 	visibility: hidden;
+}
+
+#box-money
+{
+    margin-left: -33px;
+    margin-top: 30px;
+	padding: 0;
+	width: 500px;
+	height: 300px;
+	overflow: auto;
+}
+.wrapper{
+   position: relative;
+   float: left;
+   left: 14px;
+   width: 400px;
+   margin-bottom: 14px;
+}
+#money1{
+   position: relative;
+   float: left;
+   left: 7px;
+   width: 100px;
+   height: 50px;
+   background-color: #828282
+}
+#money2{
+   position: relative;
+   float: left;
+   left: 12px;
+   width: 100px;
+   height: 50px;
+   background-color: #828282
+}
+#money5{
+   position: relative;
+   float: left;
+   left: 17px;
+   width: 100px;
+   height: 50px;
+   background-color: #828282
+}
+#money10{
+   position: relative;
+   float: left;
+   left: 7px;
+   width: 100px;
+   height: 50px;
+   background-color: #828282
+}
+#money20{
+   position: relative;
+   float: left;
+   left: 12px;
+   width: 100px;
+   height: 50px;
+   background-color: #828282
+}
+#money50{
+   position: relative;
+   float: left;
+   left: 17px;
+   width: 100px;
+   height: 50px;
+   background-color: #828282
+}
+#money100{
+   position: relative;
+   float: left;
+   left: 7px;
+   width: 100px;
+   height: 50px;
+   background-color: #828282
+}
+#money200{
+   position: relative;
+   float: left;
+   left: 12px;
+   width: 100px;
+   height: 50px;
+   background-color: #828282
+}
+#money500{
+   position: relative;
+   float: left;
+   left: 17px;
+   width: 100px;
+   height: 50px;
+   background-color: #828282
+}
+.ribbon{	
+	background-image: url("../img/bg_ribbon.png") ;
+	background-position: -0px -60px;
+	position:absolute;
+	left: 80px;
+	top: 0px;
+	width: 20px; 
+	height: 20px; 
+	text-align:center;
+}
+#ribbon2{
+	
+	position:absolute;
+	left: 180px;
+	top: 0px;
+}
+#ribbon5{
+	
+	position:absolute;
+	left: 280px;
+	top: 0px;
+}
+
+#ribbon10{
+	
+	position:absolute;
+	left: 80px;
+	top: 55px;
+}
+#ribbon20{
+	
+	position:absolute;
+	left: 180px;
+	top: 55px;
+}
+#ribbon50{
+	
+	position:absolute;
+	left: 280px;
+	top: 55px;
+}
+
+#ribbon100{
+	
+	position:absolute;
+	left: 80px;
+	top: 110px;
+}
+#ribbon200{
+	
+	position:absolute;
+	left: 180px;
+	top: 110px;
+}
+#ribbon500{
+	position:absolute;
+	left: 280px;
+	top: 110px;
+}
+.x-list-item .x-list-item-body div {
+    font-size:0.8em;
+    float:left;
+    width:11em;
+    margin:0;
+    padding:0;
+    position:absolute;
+    top:5px;
+    left:75px;
+}
+
+.x-list-item.x-item-selected .x-list-item-body div {
+    font-size:1.2em;
+    left:130px;
+}
+
+
+.x-list-item .x-list-item-body img {
+    width:57px;
+    height:57px;
+    display:block;
+    float:left;
+    margin:0;
+    padding:0;
+}
+
+.x-list-item.x-item-selected .x-list-item-body img {
+    width:100px;
+    height:100px;
 }
