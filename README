@@ -1,2 +1,53 @@
-First time i used git! :) Edit with MacOS. TextMate
-Haha dzui qua \m/
+/* --------- Hackathon Competition - Hackathon.vn --------- */ 
+
+What it is
+----------
+iVi' is a small application help us tracking expense. It's so simple with about 350 line of javascript, funny and very useful.
+
+Features
+--------
+  - Visually deposit and withdraw using drag n drop.
+  - Tracking expense location with Google maps.
+  - Capture photos of objects you've bought.
+  - Nice report with useful information.
+  
+  Future:
+  - Credit card.
+  - Customize themes, icons.
+  - Manage important papers like ID, personal cards.
+  - Synchronization.
+  - Social network
+  - Adnvace report
+  
+  
+Authors 
+-------
+  Leader  : Do Nguyen Kha
+  Coder   : Nguyen Xuan Quang Dung
+  Tester  : Tran Hoang Huy
+  Designer: Vo Chi Dung
+    
+  Room: 5.1 - University Of Sciences Building - Thu Duc District
+
+Product
+------- 
+  Name            : iVi'
+  Type            : Web Application
+  Platform        : iOS, Android, BlackBerry
+  Frameworks: 
+    - PhoneGap 0.9.5. 
+    - Sencha Touch 1.1.
+  License         : GPL v3
+  Version control : SVN - Local server: svn://10.29.128.98/hackathon-project-1
+  Log file        : goo.gl/g3UNv
+    
+Description 
+-----------
+  Not available
+  
+ 
+Instruction 
+-----------
+  Not available
+  
+Thanks to Greengar Company for supporting us devices and knowledge during 2 days of the competition. Especially mentors, mr.Kong. 
