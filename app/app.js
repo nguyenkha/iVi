@@ -79,7 +79,7 @@ app = {
 			        {
 			            xtype: 'numberfield',
 			            name : 'amount',
-						label: 'Amount (x1.000 VND)',
+						label: 'Amount',
 						value: '0'
 			        },
 					{
@@ -87,7 +87,22 @@ app = {
 						name: 'submit',
 						text: 'Deposit',
 						handler: function() {
-						Ext.Msg.alert('ADD Money: '+app.views.deposit.items.items[0].getValue() + '000 VND');
+                            var value = app.views.deposit.items.items[0].getValue();
+                            if (value!=0)
+                                Ext.Msg.alert('Deposit:'+value+' VND');
+                            // reset all values
+                            app.views.deposit.items.items[0].setValue(0); // amount value
+                                // money papers' values
+                            document.getElementById('money1').childNodes[1].innerText = 0;
+                            document.getElementById('money2').childNodes[1].innerText = 0;
+                            document.getElementById('money5').childNodes[1].innerText = 0;
+                            document.getElementById('money10').childNodes[1].innerText = 0;
+                            document.getElementById('money20').childNodes[1].innerText = 0;
+                            document.getElementById('money50').childNodes[1].innerText = 0;
+                            document.getElementById('money100').childNodes[1].innerText = 0;
+                            document.getElementById('money200').childNodes[1].innerText = 0;
+                            document.getElementById('money500').childNodes[1].innerText = 0;
+                            
 						}
 					},				
 				],
@@ -129,6 +144,7 @@ app = {
                             infowindow.setContent(this.html);
                             infowindow.open(map, this);
                         });
+                        
                         setTimeout( function(){ map.panTo (latLng); } , 1000);
                     }
                 }
@@ -197,7 +213,19 @@ app = {
             items: [new Ext.List({
 			    fullscreen: true,
 			    itemTpl : '<img src="{photo}" /><div>{datetime}<br /><strong>${amount}</strong> {description}</div>',
-			    store: this.models.withdraw
+			    store: this.models.withdraw,
+                // events
+                listeners: {
+                    itemdoubletap: function( view, index, item, e) {
+                        var x = app.models.withdraw.getAt(index).get('x');
+                        var y = app.models.withdraw.getAt(index).get('y');
+                        var latLng = new google.maps.LatLng(x,y);
+                        setTimeout( function(){ app.views.map.map (latLng); } , 1000);
+                        
+                        // switch view
+                        app.views.viewPort.setActiveItem(3);
+                    }
+                }
 			})],
 			iconCls: 'info'
 		});
@@ -222,7 +250,7 @@ app = {
 		new Ext.util.TapRepeater('money1', {
 		listeners: {
             touchstart: function( tap, e){			
-				app.views.deposit.items.items[0].setValue(parseInt(app.views.deposit.items.items[0].getValue())+1);
+				app.views.deposit.items.items[0].setValue(parseInt(app.views.deposit.items.items[0].getValue())+1000);
 				tap.el.dom.childNodes[1].innerText = parseInt(tap.el.dom.childNodes[1].innerText)+1;
 			}
 			}
@@ -231,7 +259,7 @@ app = {
 		new Ext.util.TapRepeater('money2', {
 		listeners: {
             touchstart: function( tap, e){			
-				app.views.deposit.items.items[0].setValue(parseInt(app.views.deposit.items.items[0].getValue())+2);
+				app.views.deposit.items.items[0].setValue(parseInt(app.views.deposit.items.items[0].getValue())+2000);
 				tap.el.dom.childNodes[1].innerText = parseInt(tap.el.dom.childNodes[1].innerText)+1;
 			}
 			}
@@ -240,7 +268,7 @@ app = {
 		new Ext.util.TapRepeater('money5', {
 		listeners: {
             touchstart: function( tap, e){			
-				app.views.deposit.items.items[0].setValue(parseInt(app.views.deposit.items.items[0].getValue())+5);
+				app.views.deposit.items.items[0].setValue(parseInt(app.views.deposit.items.items[0].getValue())+5000);
 				tap.el.dom.childNodes[1].innerText = parseInt(tap.el.dom.childNodes[1].innerText)+1;
 			}
 			}
@@ -249,7 +277,7 @@ app = {
 		new Ext.util.TapRepeater('money10', {
 		listeners: {
             touchstart: function( tap, e){			
-				app.views.deposit.items.items[0].setValue(parseInt(app.views.deposit.items.items[0].getValue())+10);
+				app.views.deposit.items.items[0].setValue(parseInt(app.views.deposit.items.items[0].getValue())+10000);
 				tap.el.dom.childNodes[1].innerText = parseInt(tap.el.dom.childNodes[1].innerText)+1;
 			}
 			}
@@ -258,7 +286,7 @@ app = {
 		new Ext.util.TapRepeater('money20', {
 		listeners: {
             touchstart: function( tap, e){			
-				app.views.deposit.items.items[0].setValue(parseInt(app.views.deposit.items.items[0].getValue())+20);
+				app.views.deposit.items.items[0].setValue(parseInt(app.views.deposit.items.items[0].getValue())+20000);
 				tap.el.dom.childNodes[1].innerText = parseInt(tap.el.dom.childNodes[1].innerText)+1;
 			}
 			}
@@ -267,7 +295,7 @@ app = {
 		new Ext.util.TapRepeater('money50', {
 		listeners: {
             touchstart: function( tap, e){			
-				app.views.deposit.items.items[0].setValue(parseInt(app.views.deposit.items.items[0].getValue())+50);
+				app.views.deposit.items.items[0].setValue(parseInt(app.views.deposit.items.items[0].getValue())+50000);
 				tap.el.dom.childNodes[1].innerText = parseInt(tap.el.dom.childNodes[1].innerText)+1;
 			}
 			}
@@ -276,7 +304,7 @@ app = {
 		new Ext.util.TapRepeater('money100', {
 		listeners: {
             touchstart: function( tap, e){			
-				app.views.deposit.items.items[0].setValue(parseInt(app.views.deposit.items.items[0].getValue())+100);
+				app.views.deposit.items.items[0].setValue(parseInt(app.views.deposit.items.items[0].getValue())+100000);
 				tap.el.dom.childNodes[1].innerText = parseInt(tap.el.dom.childNodes[1].innerText)+1;
 			}
 			}
@@ -285,7 +313,7 @@ app = {
 		new Ext.util.TapRepeater('money200', {
 		listeners: {
             touchstart: function( tap, e){			
-				app.views.deposit.items.items[0].setValue(parseInt(app.views.deposit.items.items[0].getValue())+200);
+				app.views.deposit.items.items[0].setValue(parseInt(app.views.deposit.items.items[0].getValue())+200000);
 				tap.el.dom.childNodes[1].innerText = parseInt(tap.el.dom.childNodes[1].innerText)+1;
 			}
 			}
@@ -294,7 +322,7 @@ app = {
 		new Ext.util.TapRepeater('money500', {
 		listeners: {
             touchstart: function( tap, e){			
-				app.views.deposit.items.items[0].setValue(parseInt(app.views.deposit.items.items[0].getValue())+500);
+				app.views.deposit.items.items[0].setValue(parseInt(app.views.deposit.items.items[0].getValue())+500000);
 				tap.el.dom.childNodes[1].innerText = parseInt(tap.el.dom.childNodes[1].innerText)+1;
 			}
 			}
@@ -303,8 +331,6 @@ app = {
 		new Ext.util.Draggable('coin', {
             revert: true
         });
-
-		
 		
 		new Ext.util.Draggable('coin1', {
             revert: true
